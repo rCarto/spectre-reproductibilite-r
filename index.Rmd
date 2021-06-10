@@ -354,7 +354,6 @@ knitr::include_graphics("img/logodocker.png")
 
 ![](img/git.jpg)
 
-
 Ram, K. Git can facilitate greater reproducibility and increased transparency in science. *Source Code Biol Med 8*, 7 (2013). https://doi.org/10.1186/1751-0473-8-7
 
 
@@ -365,24 +364,19 @@ Ram, K. Git can facilitate greater reproducibility and increased transparency in
 <font size="2">[https://research-compendium.science/](https://research-compendium.science/)</font>
 
 
-2 exemples :  
-
 * https://rcarto.gitpages.huma-num.fr/centralite/
-* https://tlecorre.gitpages.huma-num.fr/cassmir/
 
-## CODECHECK
 
 
 ## Les données
 
-Stocker / Archiver ses données dans un dépôt respectant les principes FAIR : 
+Stocker / archiver ses données dans un dépôt respectant les principes FAIR : 
 
 <img src="img/logo_nakala.png" width="350"> <img src="img/humanum.jpg" width="50">   
 
 <img src="img/zenodo-logo.png" width="350"> 
 
 ## Et après? {.smaller}
-
 
 ![](img/activem.png)
 
@@ -400,7 +394,7 @@ Peer, L., Orr, L., & Coppock, A. (2021). Active Maintenance: A Proposal for the 
 
 ## Merci
 
-<img src="img/prlogo.png" width=50px />  [Lien vers la présentation]()    
+<img src="img/prlogo.png" width=50px />  Slides [rcarto.github.io/spectre-reproductibilite-r/](https://rcarto.github.io/spectre-reproductibilite-r/)    
 </br>
 <img src="img/ghlogo.png" width=50px />  [Code de la présentation](https://github.com/rCarto/spectre-reproductibilite-r)  
 </br>
