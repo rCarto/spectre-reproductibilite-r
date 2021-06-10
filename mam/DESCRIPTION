@@ -1,0 +1,18 @@
+Package: mam
+Type: Package
+Title: Create the Wealth Map of Martinique Municipalities
+Version: 0.1.0
+Authors@R: person("Timothée", "Giraud", 
+                  email = "timothee.giraud@cnrs.fr",
+                  role = c("cre","aut"), 
+                  comment = c(ORCID = "0000-0002-1932-3323"))
+Description: Use this package to recreate the wealth map of Martinique
+    municipalities.
+License: GPL-3
+Encoding: UTF-8
+Imports: mapsf (== 0.2.0)
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
+RoxygenNote: 7.1.1

@@ -1,0 +1,19 @@
+# martinique.gpkg
+
+A GeoPackage of Martinique municipalities.
+ADMIN EXPRESS-COG (2018 edition), IGN 2018
+
+
+# rev.csv
+
+Base comparateur de territoires (upload date: 2018-09-25), Insee 2018
+
+Fields:
+
+INSEE_COM: Municipality identifier
+STATUS: Municipality administrative status
+LIBGEO: Municipality name
+POP: Total population, 2015
+MED: Median disposable income adjusted per equivalent household member, in euros, 2015
+CHOM: Unemployed population, 2015
+ACT: Active population, 2015

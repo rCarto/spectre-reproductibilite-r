@@ -42,7 +42,7 @@ Selon Claerbout, Donoho, Peng (... et Giraud) :
 </br>
 **Attention**, d'autres auteurs et intitutions inversent ces définitons, les utilisent de manière indifférenciée ou rajoute le concept de répétabilité.  
 
-<font size="2">[Barba, L. A. (2018). Terminologies for reproducible research. arXiv preprint arXiv:1802.03311.](https://arxiv.org/abs/1802.03311)</font>
+<font size="2">Barba, L. A. (2018). Terminologies for reproducible research. arXiv preprint [arXiv:1802.03311](https://arxiv.org/abs/1802.03311).</font>
 
 
 
@@ -51,7 +51,7 @@ Selon Claerbout, Donoho, Peng (... et Giraud) :
 
 ![](img/peng.jpg)
 
-<font size="2">[Peng R. D. (2011). Reproducible research in computational science. *Science (New York, N.Y.), 334*(6060), 1226–1227. https://doi.org/10.1126/science.1213847](https://doi.org/10.1126/science.1213847)</font>
+<font size="2">Peng R. D. (2011). Reproducible research in computational science. *Science (New York, N.Y.), 334*(6060), 1226–1227. https://doi.org/10.1126/science.1213847</font>
 
 
 
@@ -65,7 +65,7 @@ Selon Claerbout, Donoho, Peng (... et Giraud) :
 knitr::include_graphics("img/map.png", dpi = 110)
 ```
 
-## La figure avec les données utilisées
+## La figure avec les données
 
 <div class="columns-2">
 
@@ -88,7 +88,7 @@ knitr::include_graphics("img/csv.png", dpi = 150)
 
 </div>
 
-## La figure avec les données utilisées et leurs métadonnées
+## La figure avec les données et les métadonnées
 <div class="columns-2">
 
 
@@ -110,7 +110,7 @@ knitr::include_graphics("img/meta.png", dpi = 150)
 
 
 
-## La figure, les données et le script utilisés
+## La figure, les données, les métadonnées et le script
 
 <div class="columns-2">
 
@@ -139,7 +139,7 @@ knitr::include_graphics("img/script.png", dpi = 150)
 
 
 
-## La figure, les données et le script utilisés
+## La figure, les données, les métadonnées et le script
 
 ```{r, fig.align='center', echo=FALSE}
 knitr::include_graphics("img/script.png", dpi = 96)
@@ -178,12 +178,12 @@ knitr::include_graphics("img/rstudio.png", dpi = 150)
 knitr::include_graphics("img/rstudio.png", dpi = 96)
 ```
 
-## Un projet RStudio + rmarkdown + sessionInfo()
+## Un projet RStudio + litterate programming + sessionInfo()
 
 <div class="columns-2">
 
 ```{r, fig.align='center', echo=FALSE}
-knitr::include_graphics("img/rmd.png", dpi = 200)
+knitr::include_graphics("img/rmd.png", dpi = 215)
 ```
 
 ```
@@ -213,148 +213,114 @@ knitr::include_graphics("img/session.png", dpi = 120)
 ## Un gestionnaire de package
 
 * [`renv`](https://rstudio.github.io/renv/) (succésseur de `packrat`)
-* [`miniCRAN`](http://andrie.github.io/miniCRAN/)
+* [`miniCRAN`](http://andrie.github.io/miniCRAN/) : créer un CRAN personnel
 * [`checkpoint`](https://github.com/RevolutionAnalytics/checkpoint/)
 * [`groundhog`](https://cran.r-project.org/web/packages/groundhog/index.html)
 
 
 
-## `renv`
+## `renv` 
 
-```{r, out.width = "10%", fig.align='left',echo = FALSE}
-include_graphics("img/logorenv.svg")
-```
+<img src="img/logorenv.svg" width="150"> 
+
 
 * Gerer les versions des packages utilisés dans un projet. 
 
 * Isoler, intelligemment, les packages par projet.
 
+## `renv` 
 
-
+<img src="img/logot.svg" width="150">   
 [Package renv : présentation et retour d’expérience, par Elise Maigné](https://r-toulouse.netlify.app/evenements/2021-05-28-diaporama-et-vid%C3%A9o-de-la-rencontre-de-mai-2021/)   
 RUG Toulouse, mai 2021
 
 
-## `renv` {.smaller}
-
-<div class="columns-2">
-```
-.
-├── analyse
-│   ├── carte_des_revenus.Rmd
-│   └── carte_des_revenus.html
-├── data
-│   ├── martinique.gpkg
-│   └── rev.csv
-├── fig
-│   └── map.png
-├── make_a_map.Rproj
-├── metadata
-│   └── metadata.txt
-├── renv
-│   ├── activate.R
-│   ├── library
-│   │   └── R-4.1
-│   │       └── x86_64-pc-linux-gnu
-│   │           ├── DBI
-│   │           ├── KernSmooth
-│   │           ├── MASS
-│   │           ├── Rcpp
-│   │           ├── base64enc
-│   │           ├── class
-│   │           ├── classInt
-│   │           ├── digest
-│   │           ├── e1071
-│   │           ├── evaluate
-│   │           ├── glue
-│   │           ├── highr
-│   │           ├── htmltools
-│   │           ├── jsonlite
-│   │           ├── knitr
-│   │           ├── magrittr
-│   │           ├── mapsf
-│   │           ├── markdown
-│   │           ├── mime
-│   │           ├── proxy
-│   │           ├── renv
-│   │           ├── rlang
-│   │           ├── rmarkdown
-│   │           ├── sf
-│   │           ├── stringi
-│   │           ├── stringr
-│   │           ├── tinytex
-│   │           ├── units
-│   │           ├── xfun
-│   │           └── yaml
-│   ├── local
-│   └── settings.dcf
-└── renv.lock
-```
-
-</div>
-
-
 ## Make-like pipeline toolkit
 
-target` (succésseur de `drake`)  
-Pour les gros projets. 
+ <img src="img/logotarget.png" width="150"> 
 
-* Jouer des parties de code de manière succéssives ou en parralèle
-* Bonne gestion des des caches et de la parralélisation 
-* Génération automatique de markdown
+`target` (succésseur de `drake`)  
 
-## target
+* Pour les gros projets. 
 
-![](img/rlile.png)   
+* Gestion des caches et parralélisation des tâches
+
+
+
+## `target` 
+
+<img src="img/rlile.png" width="150">    
 [Reproducible Computation at Scale in R with {targets}, par Will Landau](https://www.meetup.com/R-Lille/events/277902715)  
 RUG Lille, le 17 juin 2021
 
+[Tutoriel officiel, une demi journée](https://github.com/wlandau/targets-tutorial)
+
+## "Packager" son analyse
 
 
-## Package
+1 - Les packages fournissent une structure de dossiers standardisée pour organiser les fichiers  
+2 - Les packages fournissent des fonctionnalités pour documenter les données et les fonctions  
+3 - Les packages fournissent un cadre pour tester votre code  
+4 - se concentrer sur les points 1–3 permet de réutiliser et partager votre code
 
-[Put your Data Analysis in an R Package — Even if You Don’t Publish it, par Denis Gontcharov](https://towardsdatascience.com/put-your-data-analysis-in-an-r-package-even-if-you-dont-publish-it-64f2bb8fd791)
-
-1 - R packages provide a standardized folder structure to organize your files  
-2 - R packages provide functionality to document data and functions  
-3 - R packages provide a framework to test your code  
-4 - putting effort into points 1–3 enables you to reuse and share your code  
+<font size="2">[Put your Data Analysis in an R Package — Even if You Don’t Publish it, par Denis Gontcharov](https://towardsdatascience.com/put-your-data-analysis-in-an-r-package-even-if-you-dont-publish-it-64f2bb8fd791)</font>
 
 
+## Utiliser des containers
 
-## Container
 ```{r, fig.align='center', echo=FALSE}
 knitr::include_graphics("img/sf_deps.png")
 ```
 
-<font size="2">[Pebesma, 2019](https://github.com/edzer/UseR2019)</font>
+<font size="2">[Edzer Pebesma, Roger Bivand, Angela Li (helper). Spatial and Spatiotemporal Data Analysis in R. UseR! Workshop, Jul 9, 2019](https://github.com/edzer/UseR2019)</font>
 
-## Container
 
-* docker
 
-```{r, fig.align='center', echo=FALSE, out.width="25%"}
-knitr::include_graphics("img/logodocker.png")
+
+
+## Docker
+
+<img src="img/logodocker.png" width="150">  
+
+``` console
+docker pull riatelab/make_a_map:v1.0.0
+
+docker run -d -e PASSWORD=xxx --rm -p 8787:8787 riatelab/make_a_map:v1.0.0 
 ```
 
-[An Introduction to Docker for R Users, par Colin Fay](https://colinfay.me/docker-r-reproducibility/)
 
-[Dockerizing your R analysis, par Phil Chapman](https://chapmandu2.github.io/post/2019/02/02/dockerizing-your-r-analysis/)
+## Docker
 
-[An Introduction to Rocker: Docker Containers for R, par Carl Boettiger et Dirk Eddelbuettel](https://journal.r-project.org/archive/2017/RJ-2017-065/index.html)
+<img src="img/logodocker.png" width="150">  
+
+* [An Introduction to Docker for R Users, par Colin Fay](https://colinfay.me/docker-r-reproducibility/)
+
+* [An Introduction to Rocker: Docker Containers for R, par Carl Boettiger et Dirk Eddelbuettel](https://journal.r-project.org/archive/2017/RJ-2017-065/index.html)
+
+* [Dockerizing your R analysis, par Phil Chapman](https://chapmandu2.github.io/post/2019/02/02/dockerizing-your-r-analysis/)
+
+
 
 ## Systèmes de gestion de version
 
-* svn
-* Git
-    * Github
-    * GitLab
+git, GitHub, GitLab ???
 
-## Git {.smaller}
+- Git est un système de gestion de version distribué
+  - tracker les changement dans les fichiers texte
+  - gérer l'historique du code source
+  - partager le code avec des dépots distantes
+  
+- GitHub et GitLab hébèrgent des dépots distants + des services pour gérer des projets (issue tracking, collaboration, hébergement web, CI/CD)
+
+- GitLab a un modèle open-core. Possibilité d'héberger une instance. 
+
+
+
+## Git 
 
 ![](img/git.jpg)
 
-Ram, K. Git can facilitate greater reproducibility and increased transparency in science. *Source Code Biol Med 8*, 7 (2013). https://doi.org/10.1186/1751-0473-8-7
+<font size="2">Ram, K. Git can facilitate greater reproducibility and increased transparency in science. *Source Code Biol Med 8*, 7 (2013). https://doi.org/10.1186/1751-0473-8-7</font>
 
 
 ## Research Compendium
@@ -376,25 +342,25 @@ Stocker / archiver ses données dans un dépôt respectant les principes FAIR :
 
 <img src="img/zenodo-logo.png" width="350"> 
 
-## Et après? {.smaller}
+## Et après? 
 
 ![](img/activem.png)
 
-Peer, L., Orr, L., & Coppock, A. (2021). Active Maintenance: A Proposal for the Long-Term Computational Reproducibility of Scientific Results. *PS: Political Science & Politics*, 1-5. doi:10.1017/S1049096521000366
+<font size="2">Peer, L., Orr, L., & Coppock, A. (2021). Active Maintenance: A Proposal for the Long-Term Computational Reproducibility of Scientific Results. *PS: Political Science & Politics*, 1-5. doi:10.1017/S1049096521000366</font>
 
 ## Quelques ressources
 
 
-[CRAN Task View: Reproducible Research](https://cran.r-project.org/web/views/ReproducibleResearch.html)
+[CRAN Task View: Reproducible Research](https://cran.r-project.org/web/views/ReproducibleResearch.html)  
 
-[MOOC]
+[Recherche reproductible : principes méthodologiques pour une science transparente](https://www.fun-mooc.fr/fr/cours/recherche-reproductible-principes-methodologiques-pour-une-science-transparente/) MOOC de C. Pouzat, A. Legrand et K. Hinsen  
 
-[Manuel]
+[Vers une recherche reproductible](https://rr-france.github.io/bookrr/)
 
 
 ## Merci
 
-<img src="img/prlogo.png" width=50px />  Slides [rcarto.github.io/spectre-reproductibilite-r/](https://rcarto.github.io/spectre-reproductibilite-r/)    
+<img src="img/prlogo.png" width=50px />  [rcarto.github.io/spectre-reproductibilite-r/](https://rcarto.github.io/spectre-reproductibilite-r/)    
 </br>
 <img src="img/ghlogo.png" width=50px />  [Code de la présentation](https://github.com/rCarto/spectre-reproductibilite-r)  
 </br>
