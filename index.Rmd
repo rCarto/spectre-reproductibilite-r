@@ -1,0 +1,420 @@
+---
+title: "Le spectre de la reproductibilité avec R"
+author: "Timothée Giraud </br> ![](img/logocnrs.svg) ![](img/russlogo.png)</br>"
+date: "*R à l'Usage des Sciences Sociales - Paris - 11 juin 2021*"
+output: 
+  ioslides_presentation: 
+    css: libs/style.css
+    # logo: img/russlogo.png
+    self_contained: yes
+    widescreen: yes
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r knitr_init, echo=FALSE, cache=FALSE}
+library(knitr)
+options(max.print="90")
+opts_chunk$set(echo=TRUE,
+               cache=TRUE,
+               prompt=FALSE,
+               tidy=FALSE,
+               comment=NA,
+               message=FALSE,
+               warning=FALSE, 
+               fig.align='center')
+opts_knit$set(width=80)
+```
+
+
+# Recherche reproductible
+
+
+
+## Reproductibilité, réplicabilité
+
+Selon Claerbout, Donoho, Peng (... et Giraud) : 
+
+**Recherche reproductible** : Les auteurs fournissent les données et le code nécessaire pour rejouer les analyses et recréer les résultats numériques.
+
+**Replication** : Une étude arrive aux même résultats scientifiques en collectant de nouvelles données (éventuellement avec des méthodes différentes) et en réalisant une nouvelle analyse.  
+
+</br>
+**Attention**, d'autres auteurs et intitutions inversent ces définitons, les utilisent de manière indifférenciée ou rajoute le concept de répétabilité.  
+
+<font size="2">[Barba, L. A. (2018). Terminologies for reproducible research. arXiv preprint arXiv:1802.03311.](https://arxiv.org/abs/1802.03311)</font>
+
+
+
+
+## Le spectre de la reproductibilité
+
+![](img/peng.jpg)
+
+<font size="2">[Peng R. D. (2011). Reproducible research in computational science. *Science (New York, N.Y.), 334*(6060), 1226–1227. https://doi.org/10.1126/science.1213847](https://doi.org/10.1126/science.1213847)</font>
+
+
+
+
+# Panorama des solutions assurant la reproductibilité des analyses avec R
+
+
+## La figure seule
+
+```{r, fig.align='center', echo=FALSE}
+knitr::include_graphics("img/map.png", dpi = 110)
+```
+
+## La figure avec les données utilisées
+
+<div class="columns-2">
+
+
+```{r, fig.align='center', echo=FALSE}
+knitr::include_graphics("img/csv.png", dpi = 150)
+```
+
+```
+.
+├── data
+│   ├── martinique.gpkg
+│   └── rev.csv
+└── fig
+    └── map.png
+```    
+
+
+
+
+</div>
+
+## La figure avec les données utilisées et leurs métadonnées
+<div class="columns-2">
+
+
+```{r, fig.align='center', echo=FALSE}
+knitr::include_graphics("img/meta.png", dpi = 150)
+```
+
+```
+.
+├── data
+│   ├── martinique.gpkg
+│   └── rev.csv
+├── fig
+│   └── map.png
+└── metadata
+    └── metadata.txt
+```    
+
+
+
+
+## La figure, les données et le script utilisés
+
+<div class="columns-2">
+
+```{r, fig.align='center', echo=FALSE}
+knitr::include_graphics("img/script.png", dpi = 150)
+```
+
+
+
+```
+.
+├── analyse
+│   └── carte_revenus.R
+├── data
+│   ├── martinique.gpkg
+│   └── rev.csv
+├── fig
+│   └── map.png
+└── metadata
+    └── medata.txt
+
+``` 
+
+
+</div>
+
+
+
+## La figure, les données et le script utilisés
+
+```{r, fig.align='center', echo=FALSE}
+knitr::include_graphics("img/script.png", dpi = 96)
+```
+
+
+
+
+## Un projet RStudio
+
+
+<div class="columns-2">
+
+```{r, fig.align='center', echo=FALSE}
+knitr::include_graphics("img/rstudio.png", dpi = 150)
+```
+
+```
+.
+├── analyse
+│   └── carte_revenus.R
+├── data
+│   ├── martinique.gpkg
+│   └── rev.csv
+├── fig
+│   └── map.png
+└── make_a_map.Rproj
+```
+
+</div>
+
+## Un projet RStudio
+
+
+```{r, fig.align='center', echo=FALSE}
+knitr::include_graphics("img/rstudio.png", dpi = 96)
+```
+
+## Un projet RStudio + rmarkdown + sessionInfo()
+
+<div class="columns-2">
+
+```{r, fig.align='center', echo=FALSE}
+knitr::include_graphics("img/rmd.png", dpi = 200)
+```
+
+```
+.
+├── analyse
+│   ├── carte_des_revenus.Rmd
+│   └── carte_des_revenus.html
+├── data
+│   ├── martinique.gpkg
+│   └── rev.csv
+├── fig
+│   └── map.png
+├── make_a_map.Rproj
+└── metadata
+    └── metadata.txt
+```
+
+## 
+
+
+```{r, fig.align='center', echo=FALSE}
+knitr::include_graphics("img/session.png", dpi = 120)
+```
+
+
+
+## Un gestionnaire de package
+
+* [`renv`](https://rstudio.github.io/renv/) (succésseur de `packrat`)
+* [`miniCRAN`](http://andrie.github.io/miniCRAN/)
+* [`checkpoint`](https://github.com/RevolutionAnalytics/checkpoint/)
+* [`groundhog`](https://cran.r-project.org/web/packages/groundhog/index.html)
+
+
+
+## `renv`
+
+```{r, out.width = "10%", fig.align='left',echo = FALSE}
+include_graphics("img/logorenv.svg")
+```
+
+* Gerer les versions des packages utilisés dans un projet. 
+
+* Isoler, intelligemment, les packages par projet.
+
+
+
+[Package renv : présentation et retour d’expérience, par Elise Maigné](https://r-toulouse.netlify.app/evenements/2021-05-28-diaporama-et-vid%C3%A9o-de-la-rencontre-de-mai-2021/)   
+RUG Toulouse, mai 2021
+
+
+## `renv` {.smaller}
+
+<div class="columns-2">
+```
+.
+├── analyse
+│   ├── carte_des_revenus.Rmd
+│   └── carte_des_revenus.html
+├── data
+│   ├── martinique.gpkg
+│   └── rev.csv
+├── fig
+│   └── map.png
+├── make_a_map.Rproj
+├── metadata
+│   └── metadata.txt
+├── renv
+│   ├── activate.R
+│   ├── library
+│   │   └── R-4.1
+│   │       └── x86_64-pc-linux-gnu
+│   │           ├── DBI
+│   │           ├── KernSmooth
+│   │           ├── MASS
+│   │           ├── Rcpp
+│   │           ├── base64enc
+│   │           ├── class
+│   │           ├── classInt
+│   │           ├── digest
+│   │           ├── e1071
+│   │           ├── evaluate
+│   │           ├── glue
+│   │           ├── highr
+│   │           ├── htmltools
+│   │           ├── jsonlite
+│   │           ├── knitr
+│   │           ├── magrittr
+│   │           ├── mapsf
+│   │           ├── markdown
+│   │           ├── mime
+│   │           ├── proxy
+│   │           ├── renv
+│   │           ├── rlang
+│   │           ├── rmarkdown
+│   │           ├── sf
+│   │           ├── stringi
+│   │           ├── stringr
+│   │           ├── tinytex
+│   │           ├── units
+│   │           ├── xfun
+│   │           └── yaml
+│   ├── local
+│   └── settings.dcf
+└── renv.lock
+```
+
+</div>
+
+
+## Make-like pipeline toolkit
+
+target` (succésseur de `drake`)  
+Pour les gros projets. 
+
+* Jouer des parties de code de manière succéssives ou en parralèle
+* Bonne gestion des des caches et de la parralélisation 
+* Génération automatique de markdown
+
+## target
+
+![](img/rlile.png)   
+[Reproducible Computation at Scale in R with {targets}, par Will Landau](https://www.meetup.com/R-Lille/events/277902715)  
+RUG Lille, le 17 juin 2021
+
+
+
+## Package
+
+[Put your Data Analysis in an R Package — Even if You Don’t Publish it, par Denis Gontcharov](https://towardsdatascience.com/put-your-data-analysis-in-an-r-package-even-if-you-dont-publish-it-64f2bb8fd791)
+
+1 - R packages provide a standardized folder structure to organize your files  
+2 - R packages provide functionality to document data and functions  
+3 - R packages provide a framework to test your code  
+4 - putting effort into points 1–3 enables you to reuse and share your code  
+
+
+
+## Container
+```{r, fig.align='center', echo=FALSE}
+knitr::include_graphics("img/sf_deps.png")
+```
+
+<font size="2">[Pebesma, 2019](https://github.com/edzer/UseR2019)</font>
+
+## Container
+
+* docker
+
+```{r, fig.align='center', echo=FALSE, out.width="25%"}
+knitr::include_graphics("img/logodocker.png")
+```
+
+[An Introduction to Docker for R Users, par Colin Fay](https://colinfay.me/docker-r-reproducibility/)
+
+[Dockerizing your R analysis, par Phil Chapman](https://chapmandu2.github.io/post/2019/02/02/dockerizing-your-r-analysis/)
+
+[An Introduction to Rocker: Docker Containers for R, par Carl Boettiger et Dirk Eddelbuettel](https://journal.r-project.org/archive/2017/RJ-2017-065/index.html)
+
+## Systèmes de gestion de version
+
+* svn
+* Git
+    * Github
+    * GitLab
+
+## Git {.smaller}
+
+![](img/git.jpg)
+
+
+Ram, K. Git can facilitate greater reproducibility and increased transparency in science. *Source Code Biol Med 8*, 7 (2013). https://doi.org/10.1186/1751-0473-8-7
+
+
+## Research Compendium
+
+
+> *A research compendium accompanies, enhances, or is a scientific publication providing data, code, and documentation for reproducing a scientific workflow.*  
+<font size="2">[https://research-compendium.science/](https://research-compendium.science/)</font>
+
+
+2 exemples :  
+
+* https://rcarto.gitpages.huma-num.fr/centralite/
+* https://tlecorre.gitpages.huma-num.fr/cassmir/
+
+## CODECHECK
+
+
+## Les données
+
+Stocker / Archiver ses données dans un dépôt respectant les principes FAIR : 
+
+<img src="img/logo_nakala.png" width="350"> <img src="img/humanum.jpg" width="50">   
+
+<img src="img/zenodo-logo.png" width="350"> 
+
+## Et après? {.smaller}
+
+
+![](img/activem.png)
+
+Peer, L., Orr, L., & Coppock, A. (2021). Active Maintenance: A Proposal for the Long-Term Computational Reproducibility of Scientific Results. *PS: Political Science & Politics*, 1-5. doi:10.1017/S1049096521000366
+
+## Quelques ressources
+
+
+[CRAN Task View: Reproducible Research](https://cran.r-project.org/web/views/ReproducibleResearch.html)
+
+[MOOC]
+
+[Manuel]
+
+
+## Merci
+
+<img src="img/prlogo.png" width=50px />  [Lien vers la présentation]()    
+</br>
+<img src="img/ghlogo.png" width=50px />  [Code de la présentation](https://github.com/rCarto/spectre-reproductibilite-r)  
+</br>
+<img src="img/twlogo.png" width=50px />  [\@rgeomatic](http://twitter.com/rgeomatic)  
+</br>
+<img src="img/hylogo.png" width=50px />  [rgeomatic.hypotheses.org](https://rgeomatic.hypotheses.org/)
+
+
+## {.smaller}
+```{r, echo = FALSE}
+options(width="110")
+x <- sessionInfo()
+print(x, locale=FALSE, RNG = F)
+```
+
+
+
