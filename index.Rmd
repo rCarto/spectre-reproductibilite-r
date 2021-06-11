@@ -1,6 +1,6 @@
 ---
 title: "Le spectre de la reproductibilité avec R"
-author: "Timothée Giraud </br> ![](img/logocnrs.svg) ![](img/russlogo.png)</br>"
+author: "Timothée Giraud </br>![](img/logo_RIATE.png)    ![](img/logocnrs.svg)    ![](img/russlogo.png)</br>"
 date: "*R à l'Usage des Sciences Sociales - Paris - 11 juin 2021*"
 output: 
   ioslides_presentation: 
@@ -40,7 +40,7 @@ Selon Claerbout, Donoho, Peng (... et Giraud) :
 **Replication** : Une étude arrive aux même résultats scientifiques en collectant de nouvelles données (éventuellement avec des méthodes différentes) et en réalisant une nouvelle analyse.  
 
 </br>
-**Attention**, d'autres auteurs et intitutions inversent ces définitons, les utilisent de manière indifférenciée ou rajoute le concept de répétabilité.  
+**Attention**, d'autres auteurs et institutions inversent ces définitons, les utilisent de manière indifférenciée ou rajoute le concept de répétabilité.  
 
 <font size="2">Barba, L. A. (2018). Terminologies for reproducible research. arXiv preprint [arXiv:1802.03311](https://arxiv.org/abs/1802.03311).</font>
 
@@ -208,7 +208,7 @@ knitr::include_graphics("img/rmd.png", dpi = 215)
 knitr::include_graphics("img/session.png", dpi = 120)
 ```
 
-
+## 
 
 ## Un gestionnaire de package
 
@@ -260,8 +260,8 @@ RUG Lille, le 17 juin 2021
 
 1 - Les packages fournissent une structure de dossiers standardisée pour organiser les fichiers  
 2 - Les packages fournissent des fonctionnalités pour documenter les données et les fonctions  
-3 - Les packages fournissent un cadre pour tester votre code  
-4 - se concentrer sur les points 1–3 permet de réutiliser et partager votre code
+3 - Les packages fournissent un cadre pour tester son code  
+4 - se concentrer sur les points 1–3 permet de réutiliser et partager son code
 
 <font size="2">[Put your Data Analysis in an R Package — Even if You Don’t Publish it, par Denis Gontcharov](https://towardsdatascience.com/put-your-data-analysis-in-an-r-package-even-if-you-dont-publish-it-64f2bb8fd791)</font>
 
@@ -301,16 +301,23 @@ docker run -d -e PASSWORD=xxx --rm -p 8787:8787 riatelab/make_a_map:v1.0.0
 
 
 
+
+
+##
+
 ## Systèmes de gestion de version
 
 git, GitHub, GitLab ???
 
 - Git est un système de gestion de version distribué
-  - tracker les changement dans les fichiers texte
-  - gérer l'historique du code source
-  - partager le code avec des dépots distantes
+
+    - tracker les changement dans les fichiers texte
+    - gérer l'historique du code source
+    - partager le code avec des dépots distantes
+  
   
 - GitHub et GitLab hébèrgent des dépots distants + des services pour gérer des projets (issue tracking, collaboration, hébergement web, CI/CD)
+
 
 - GitLab a un modèle open-core. Possibilité d'héberger une instance. 
 
