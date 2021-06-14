@@ -10,7 +10,7 @@ Description: Use this package to recreate the wealth map of Martinique
     municipalities.
 License: GPL-3
 Encoding: UTF-8
-Imports: mapsf (== 0.2.0)
+Imports: mapsf
 Suggests: 
     knitr,
     rmarkdown

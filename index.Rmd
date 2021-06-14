@@ -239,7 +239,7 @@ RUG Toulouse, mai 2021
 
  <img src="img/logotarget.png" width="150"> 
 
-`target` (succésseur de `drake`)  
+`targets` (succésseur de `drake`)  
 
 * Pour les gros projets. 
 
@@ -247,7 +247,7 @@ RUG Toulouse, mai 2021
 
 
 
-## `target` 
+## `targets` 
 
 <img src="img/rlile.png" width="150">    
 [Reproducible Computation at Scale in R with {targets}, par Will Landau](https://www.meetup.com/R-Lille/events/277902715)  
